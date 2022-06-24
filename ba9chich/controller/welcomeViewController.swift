@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import CometChatPro
 class welcomeViewController: UIViewController {
 
     var userviewmodel = userVM()
@@ -32,12 +33,13 @@ class welcomeViewController: UIViewController {
         
             userviewmodel.getuserconec(Owneruser: email.text!, Ownerpass: password.text! ,successHandler: {anomalyList in
                 self.userviewmodel.userToken = anomalyList
+               
                 self.performSegue(withIdentifier: "login", sender: sender)
-                    }, errorHandler: {
-                        print("errorororoor")
-                    })
-
                 
+             
+            }, errorHandler: {
+                self.prompt(title: "warning", message: "email or MDP Incorrect !! ")
+            })
            
              
           

@@ -7,7 +7,7 @@
 
 import UIKit
 
-
+import CometChatPro
 class LaunchViewController: UIViewController {
 
     
@@ -16,8 +16,7 @@ class LaunchViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-      
+        
     }
 
     

@@ -6,13 +6,22 @@
 //
 
 import UIKit
-
+import CometChatPro
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+let appId = "2128450b1088bce7"
+let region = "us"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let mySettings = AppSettings.AppSettingsBuilder(
+        ).subscribePresenceForAllUsers().setRegion(region: region).build()
+        CometChat(appId: appId, appSettings: mySettings) { (isSuccess) in
+         print("CometChat PRO SDK succefly")
+        } onError: { (error) in
+            print("CometChat PRO SDK error")
+        }
+
         // Override point for customization after application launch.
         return true
     }

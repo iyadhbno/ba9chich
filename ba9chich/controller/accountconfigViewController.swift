@@ -9,7 +9,7 @@ import UIKit
 
 class accountconfigViewController: UIViewController {
     var userviewmodelm = userVM()
-    var user : User?
+    var user : Userr?
     @IBOutlet weak var number: UITextField!
     @IBAction func update(_ sender: Any) {
         if(password.text == "" && conpassword.text == ""  ) {

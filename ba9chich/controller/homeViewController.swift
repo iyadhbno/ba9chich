@@ -27,7 +27,7 @@ class homeViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     @IBOutlet weak var searchBar: UISearchBar!
     var data = [Expense]()
     var filteredData = [Expense]()
-    var usertable : User?
+    var usertable : Userr?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            

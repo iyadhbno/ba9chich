@@ -10,7 +10,7 @@ import Alamofire
 class mailViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
 
    //var
-    var usertable = [User]()
+    var usertable = [Userr]()
     var userviewmodelm = userVM()
     var messagerieviewmodel = transactionVM()
     var movie : Transaction?

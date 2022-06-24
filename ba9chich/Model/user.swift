@@ -9,14 +9,14 @@ import Foundation
 
 
 struct UsersData : Decodable{
-    let users : [User]?
+    let users : [Userr]?
     private  enum CodingKeys: String, CodingKey {
      
           case users = "results"
        }
 }
 
-struct User : Decodable {
+struct Userr : Decodable {
     let _id :   String?
     let nom : String?
     let prenom :String?

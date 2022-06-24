@@ -178,16 +178,22 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework"
+  install_framework "${PODS_ROOT}/CometChatCalls/Vendors/WebRTC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MOLH/MOLH.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/CometChatCalls/CometChatProCalls.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/CometChatPro/CometChatPro.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework"
+  install_framework "${PODS_ROOT}/CometChatCalls/Vendors/WebRTC.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MOLH/MOLH.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/CometChatCalls/CometChatProCalls.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/CometChatPro/CometChatPro.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

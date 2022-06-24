@@ -19,20 +19,20 @@ extension String {
 
 class userVM {
   
-    var userdata = [User]()
+    var userdata = [Userr]()
     var tokenString : String?
-    var useronhold: User?
-    var userToken : User?
-    var userByemail : User?
-    var userByid : User?
-    var regestirUser : User?
+    var useronhold: Userr?
+    var userToken : Userr?
+    var userByemail : Userr?
+    var userByid : Userr?
+    var regestirUser : Userr?
     @Published var isAuthenticated : Bool = false
-    func getOwnerToy(OwnerId:String, successHandler: @escaping (_ anomalyList: User) -> (),errorHandler: @escaping () -> ())
+    func getOwnerToy(OwnerId:String, successHandler: @escaping (_ anomalyList: Userr) -> (),errorHandler: @escaping () -> ())
         {
             let url = "http://localhost:3000/getuser/"+OwnerId
             print("getOwnerToy : "+url)
             
-            AF.request(url, method: .get).validate().responseDecodable(of: User.self, decoder: JSONDecoder()) { apiResponse in
+            AF.request(url, method: .get).validate().responseDecodable(of: Userr.self, decoder: JSONDecoder()) { apiResponse in
                 guard apiResponse.response != nil else{
                     errorHandler()
                     return
@@ -54,14 +54,14 @@ class userVM {
             }
             
         }
-    func getuserconec(Owneruser:String,Ownerpass:String, successHandler: @escaping (_ anomalyList: User) -> (),errorHandler: @escaping () -> ())
+    func getuserconec(Owneruser:String,Ownerpass:String, successHandler: @escaping (_ anomalyList: Userr) -> (),errorHandler: @escaping () -> ())
         { var request = URLRequest(url: URL(string: "http://localhost:3000/loginClient")!)
             request.httpMethod = "post"
             request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
             
             let postString = "email="+Owneruser+"&"+"password="+Ownerpass+"&"
             request.httpBody = postString.data(using: .utf8)
-            AF.request(request).validate().responseDecodable(of: User.self, decoder: JSONDecoder()) { apiResponse in
+            AF.request(request).validate().responseDecodable(of: Userr.self, decoder: JSONDecoder()) { apiResponse in
                 guard apiResponse.response != nil else{
                     errorHandler()
                     return
@@ -87,7 +87,7 @@ class userVM {
            
         }
     //alomofire update toy
-        func updateToys(Image:UIImage,toy:User?,successHandler: @escaping (_ toy: User?) -> (),errorHandler: @escaping () -> ())
+        func updateToys(Image:UIImage,toy:Userr?,successHandler: @escaping (_ toy: Userr?) -> (),errorHandler: @escaping () -> ())
         {
             let urlApi = "http://localhost:3000/updateImageClient/"+(toy?._id)!
             print(urlApi)
@@ -98,7 +98,7 @@ class userVM {
                 multipartFormData.append(Image.jpegData(compressionQuality: 0.5)!, withName: "Image" , fileName: "Image.jpeg", mimeType: "Image/jpeg")
 
               
-        },to: urlApi, method: .post , headers: headers).responseDecodable(of: User.self, decoder: JSONDecoder()) { apiResponse in
+        },to: urlApi, method: .post , headers: headers).responseDecodable(of: Userr.self, decoder: JSONDecoder()) { apiResponse in
 
                 guard apiResponse.response != nil else{
                     errorHandler()
@@ -119,12 +119,12 @@ class userVM {
         }
     
     
-    func getOwnermail(OwnerId:String, successHandler: @escaping (_ anomalyList: [User]) -> (),errorHandler: @escaping () -> ())
+    func getOwnermail(OwnerId:String, successHandler: @escaping (_ anomalyList: [Userr]) -> (),errorHandler: @escaping () -> ())
         {
             let url = "http://localhost:3000/getuserEmail/"+OwnerId
             print("getOwnerToy : "+url)
             
-            AF.request(url, method: .get).validate().responseDecodable(of: [User].self, decoder: JSONDecoder()) { apiResponse in
+            AF.request(url, method: .get).validate().responseDecodable(of: [Userr].self, decoder: JSONDecoder()) { apiResponse in
                 guard apiResponse.response != nil else{
                     errorHandler()
                     return
@@ -171,7 +171,7 @@ class userVM {
 
                   do {
 
-                      let Allusers = try JSONDecoder().decode([User].self, from: data)
+                      let Allusers = try JSONDecoder().decode([Userr].self, from: data)
                      
                       Allusers.forEach { user in self.userByemail = user }
                   
@@ -204,7 +204,7 @@ class userVM {
 
                 do {
 
-                    let Allusers = try JSONDecoder().decode(User.self, from: data)
+                    let Allusers = try JSONDecoder().decode(Userr.self, from: data)
                    
                    
                     DispatchQueue.main.async {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CometChatPro
 extension String {
     var isValidEmail: Bool {
         NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
@@ -82,6 +83,21 @@ class OnBoardViewController: UIViewController,UIPickerViewDataSource,UIPickerVie
                     
                     userviewmodelm.getuserconec(Owneruser: email.text!, Ownerpass: password.text! ,successHandler: {anomalyList in
                         self.userviewmodelm.userToken = anomalyList
+                        
+                        let uid = anomalyList.phone
+                        let name = anomalyList.nom
+                         let authKey = "4426c753e2c6e4bb5882dbe65f85d72ace266fe2"
+
+                         let newUser : User = User(uid: uid!, name: name!)
+                       
+
+                         CometChat.createUser(user: newUser, apiKey: authKey, onSuccess: { (User) in
+                               print("User created successfully. \(User.stringValue())")
+                           }) { (error) in
+                              print("The error is \(String(describing: error?.description))")
+                         }
+                         
+
                         self.performSegue(withIdentifier: "login", sender: sender)
                             }, errorHandler: {
                                 print("errorororoor")
