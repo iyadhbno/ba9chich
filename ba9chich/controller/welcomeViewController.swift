@@ -32,7 +32,7 @@ class welcomeViewController: UIViewController {
         
             userviewmodel.getuserconec(Owneruser: email.text!, Ownerpass: password.text! ,successHandler: {anomalyList in
                 self.userviewmodel.userToken = anomalyList
-                self.prompt(title: "connect", message: "connect")
+                self.performSegue(withIdentifier: "login", sender: sender)
                     }, errorHandler: {
                         print("errorororoor")
                     })
@@ -54,8 +54,8 @@ class welcomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "login" {
-        //    let destination = segue.destination as! tabbarViewController
-         //   destination.userviewmodelm = userviewmodel
+          let destination = segue.destination as! tabbarViewController
+        destination.userviewmodelm = userviewmodel
            
         }
     }

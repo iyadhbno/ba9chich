@@ -10,6 +10,18 @@
 		1DCE583955F3FD3161BAC890 /* Pods_ba9chichTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7832CAEDA1CA3F8C6F39D6BA /* Pods_ba9chichTests.framework */; };
 		87122CC537800D2CE4F4E705 /* Pods_ba9chich_ba9chichUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D1E93F6A211FD956186CDA /* Pods_ba9chich_ba9chichUITests.framework */; };
 		9F0B7829851FB925E0C29919 /* Pods_ba9chich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAA93F8FBB7555DE73070C7 /* Pods_ba9chich.framework */; };
+		CE6AE1242865200D00A35FDD /* mailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE11A2865200C00A35FDD /* mailViewController.swift */; };
+		CE6AE1252865200D00A35FDD /* newquestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE11B2865200C00A35FDD /* newquestionViewController.swift */; };
+		CE6AE1262865200D00A35FDD /* accountconfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE11C2865200C00A35FDD /* accountconfigViewController.swift */; };
+		CE6AE1272865200D00A35FDD /* QrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE11D2865200C00A35FDD /* QrViewController.swift */; };
+		CE6AE1282865200D00A35FDD /* settingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE11E2865200C00A35FDD /* settingViewController.swift */; };
+		CE6AE1292865200D00A35FDD /* tabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE11F2865200C00A35FDD /* tabbarViewController.swift */; };
+		CE6AE12A2865200D00A35FDD /* newmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE1202865200C00A35FDD /* newmailViewController.swift */; };
+		CE6AE12B2865200D00A35FDD /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE1212865200C00A35FDD /* homeViewController.swift */; };
+		CE6AE12C2865200D00A35FDD /* chnagephotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE1222865200D00A35FDD /* chnagephotoViewController.swift */; };
+		CE6AE12D2865200D00A35FDD /* notificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE1232865200D00A35FDD /* notificationViewController.swift */; };
+		CE6AE12F2865254000A35FDD /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE12E2865254000A35FDD /* Alert.swift */; };
+		CE6AE1312865265B00A35FDD /* senavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AE1302865265B00A35FDD /* senavViewController.swift */; };
 		CE7E863B2863E62300A43641 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E863A2863E62300A43641 /* AppDelegate.swift */; };
 		CE7E863D2863E62300A43641 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E863C2863E62300A43641 /* SceneDelegate.swift */; };
 		CE7E863F2863E62300A43641 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E863E2863E62300A43641 /* ViewController.swift */; };
@@ -59,6 +71,18 @@
 		8E399B025CF2FA7D1C3AB9F8 /* Pods-ba9chichTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ba9chichTests.debug.xcconfig"; path = "Target Support Files/Pods-ba9chichTests/Pods-ba9chichTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4B35424657B2B9875C261B3 /* Pods-ba9chich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ba9chich.debug.xcconfig"; path = "Target Support Files/Pods-ba9chich/Pods-ba9chich.debug.xcconfig"; sourceTree = "<group>"; };
 		C5E837F630B6E80B10CF9995 /* Pods-ba9chich-ba9chichUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ba9chich-ba9chichUITests.debug.xcconfig"; path = "Target Support Files/Pods-ba9chich-ba9chichUITests/Pods-ba9chich-ba9chichUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CE6AE11A2865200C00A35FDD /* mailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mailViewController.swift; sourceTree = "<group>"; };
+		CE6AE11B2865200C00A35FDD /* newquestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newquestionViewController.swift; sourceTree = "<group>"; };
+		CE6AE11C2865200C00A35FDD /* accountconfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accountconfigViewController.swift; sourceTree = "<group>"; };
+		CE6AE11D2865200C00A35FDD /* QrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrViewController.swift; sourceTree = "<group>"; };
+		CE6AE11E2865200C00A35FDD /* settingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingViewController.swift; sourceTree = "<group>"; };
+		CE6AE11F2865200C00A35FDD /* tabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tabbarViewController.swift; sourceTree = "<group>"; };
+		CE6AE1202865200C00A35FDD /* newmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newmailViewController.swift; sourceTree = "<group>"; };
+		CE6AE1212865200C00A35FDD /* homeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
+		CE6AE1222865200D00A35FDD /* chnagephotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chnagephotoViewController.swift; sourceTree = "<group>"; };
+		CE6AE1232865200D00A35FDD /* notificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notificationViewController.swift; sourceTree = "<group>"; };
+		CE6AE12E2865254000A35FDD /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		CE6AE1302865265B00A35FDD /* senavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = senavViewController.swift; sourceTree = "<group>"; };
 		CE7E86372863E62300A43641 /* ba9chich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ba9chich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7E863A2863E62300A43641 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE7E863C2863E62300A43641 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +244,18 @@
 				CE7E8695286406F900A43641 /* resetpasswordViewController.swift */,
 				CE7E8696286406F900A43641 /* securitycodeViewController.swift */,
 				CE7E8699286406FA00A43641 /* confirmresetpasswordViewController.swift */,
+				CE6AE11C2865200C00A35FDD /* accountconfigViewController.swift */,
+				CE6AE1222865200D00A35FDD /* chnagephotoViewController.swift */,
+				CE6AE1212865200C00A35FDD /* homeViewController.swift */,
+				CE6AE11A2865200C00A35FDD /* mailViewController.swift */,
+				CE6AE1202865200C00A35FDD /* newmailViewController.swift */,
+				CE6AE11B2865200C00A35FDD /* newquestionViewController.swift */,
+				CE6AE1232865200D00A35FDD /* notificationViewController.swift */,
+				CE6AE11D2865200C00A35FDD /* QrViewController.swift */,
+				CE6AE11E2865200C00A35FDD /* settingViewController.swift */,
+				CE6AE11F2865200C00A35FDD /* tabbarViewController.swift */,
+				CE6AE1302865265B00A35FDD /* senavViewController.swift */,
+				CE6AE12E2865254000A35FDD /* Alert.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -483,24 +519,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6AE1292865200D00A35FDD /* tabbarViewController.swift in Sources */,
 				CE7E866F2863E87A00A43641 /* user.swift in Sources */,
 				CE7E869E286406FA00A43641 /* OnBoardViewController.swift in Sources */,
+				CE6AE12B2865200D00A35FDD /* homeViewController.swift in Sources */,
 				CE7E869F286406FA00A43641 /* confirmresetpasswordViewController.swift in Sources */,
 				CE7E863F2863E62300A43641 /* ViewController.swift in Sources */,
+				CE6AE12C2865200D00A35FDD /* chnagephotoViewController.swift in Sources */,
+				CE6AE1282865200D00A35FDD /* settingViewController.swift in Sources */,
 				CE7E863B2863E62300A43641 /* AppDelegate.swift in Sources */,
 				CE7E869C286406FA00A43641 /* securitycodeViewController.swift in Sources */,
+				CE6AE12D2865200D00A35FDD /* notificationViewController.swift in Sources */,
 				CE7E863D2863E62300A43641 /* SceneDelegate.swift in Sources */,
+				CE6AE12A2865200D00A35FDD /* newmailViewController.swift in Sources */,
+				CE6AE1242865200D00A35FDD /* mailViewController.swift in Sources */,
 				CE7E86752863EBFC00A43641 /* userviewmodel.swift in Sources */,
+				CE6AE1272865200D00A35FDD /* QrViewController.swift in Sources */,
 				CE7E869B286406FA00A43641 /* resetpasswordViewController.swift in Sources */,
 				CE7E869D286406FA00A43641 /* findaccountViewController.swift in Sources */,
 				CE7E8691286406B200A43641 /* Launch2ViewController.swift in Sources */,
 				CE7E86732863E92800A43641 /* expense.swift in Sources */,
+				CE6AE1312865265B00A35FDD /* senavViewController.swift in Sources */,
 				CE7E8693286406E600A43641 /* LaunchViewController.swift in Sources */,
 				CE7E86712863E8D700A43641 /* transaction.swift in Sources */,
 				CE7E86792863EC1A00A43641 /* expenseviewmodel.swift in Sources */,
+				CE6AE12F2865254000A35FDD /* Alert.swift in Sources */,
 				CE7E86772863EC0B00A43641 /* transactionviewmodel.swift in Sources */,
 				CE7E8690286406B200A43641 /* Launch3ViewController.swift in Sources */,
 				CE7E869A286406FA00A43641 /* welcomeViewController.swift in Sources */,
+				CE6AE1262865200D00A35FDD /* accountconfigViewController.swift in Sources */,
+				CE6AE1252865200D00A35FDD /* newquestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

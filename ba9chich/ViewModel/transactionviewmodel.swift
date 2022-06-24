@@ -6,10 +6,39 @@
 //
 
 import Foundation
-
+import Alamofire
 
 class transactionVM {
     var AllTransaction = [Transaction]()
+    
+    func getOwnerToy(successHandler: @escaping (_ anomalyList: [Transaction] ) -> (),errorHandler: @escaping () -> ())
+        {
+            let url = "http://localhost:3000/transactions/allTransactions"
+            print("getOwnerToy : "+url)
+            
+            AF.request(url, method: .get).validate().responseDecodable(of:  [Transaction].self, decoder: JSONDecoder()) { apiResponse in
+                guard apiResponse.response != nil else{
+                    errorHandler()
+                    return
+                }
+                
+                switch apiResponse.response?.statusCode {
+                    
+                    case 200:
+                    successHandler(try! apiResponse.result.get())
+
+                    
+                    case 500:
+                    errorHandler()
+               
+                default:
+                  errorHandler()
+                    
+                }
+                
+            }
+            
+        }
     func getalltransaction()  {
        
         
@@ -39,7 +68,7 @@ class transactionVM {
     
    
     func createtransaction(fromAdress:String,toAdress:String,amount:String){
-            var request = URLRequest(url: URL(string: "http://localhost:3000/createreponse")!)
+            var request = URLRequest(url: URL(string: "http://localhost:3000/transactions/createTransaction")!)
             request.httpMethod = "post"
             request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
             print("its working")

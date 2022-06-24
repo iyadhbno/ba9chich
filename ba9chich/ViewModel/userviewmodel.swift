@@ -26,7 +26,7 @@ class userVM {
     var userByemail : User?
     var userByid : User?
     var regestirUser : User?
-    
+    @Published var isAuthenticated : Bool = false
     func getOwnerToy(OwnerId:String, successHandler: @escaping (_ anomalyList: User) -> (),errorHandler: @escaping () -> ())
         {
             let url = "http://localhost:3000/getuser/"+OwnerId
@@ -133,7 +133,7 @@ class userVM {
                 switch apiResponse.response?.statusCode {
                     
                     case 200:
-                    let responseString = String(data: apiResponse.data!, encoding: .utf8)
+                   // let responseString = String(data: apiResponse.data!, encoding: .utf8)
               
                     successHandler(try! apiResponse.result.get())
 
@@ -148,6 +148,16 @@ class userVM {
             }
             
         }
+    func signout() {
+               
+               let defaults = UserDefaults.standard
+               defaults.removeObject(forKey: "jsonwebtoken")
+               DispatchQueue.main.async {
+                   self.isAuthenticated = false
+                   print(self.isAuthenticated)
+               }
+               
+           }
     func getbyemail(email : String){
          
           

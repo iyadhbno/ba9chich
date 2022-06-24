@@ -82,16 +82,16 @@ class OnBoardViewController: UIViewController,UIPickerViewDataSource,UIPickerVie
                     
                     userviewmodelm.getuserconec(Owneruser: email.text!, Ownerpass: password.text! ,successHandler: {anomalyList in
                         self.userviewmodelm.userToken = anomalyList
-                        self.prompt(title: "connect", message: "connect")
+                        self.performSegue(withIdentifier: "login", sender: sender)
                             }, errorHandler: {
                                 print("errorororoor")
                             })
-                            sleep(1)
+                           
                         
                         
                       
                       
-                      //  performSegue(withIdentifier: "login", sender: sender)
+           
                    
                 }else{
                     prompt(title: "warning", message: "password don't match")
@@ -116,8 +116,8 @@ class OnBoardViewController: UIViewController,UIPickerViewDataSource,UIPickerVie
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "login" {
-            //let destination = segue.destination as! tabbarViewController
-            //destination.userviewmodelm = userviewmodelm
+            let destination = segue.destination as! tabbarViewController
+            destination.userviewmodelm = userviewmodelm
            
         }
     }
