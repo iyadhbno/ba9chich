@@ -41,7 +41,7 @@ class homeViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            
-           tableView.backgroundColor = UIColor(hex: 0xE6FAF0)
+        
            let cell = tableView.dequeueReusableCell(withIdentifier: "mCell")
            let contentView = cell?.contentView
            
@@ -81,7 +81,22 @@ class homeViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
                destination.userviewmodelm = userviewmodelm
            }
        }
-       
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+                    //film.remove(at: indexPath.row)
+            self.present(Alert.makeActionAlert(titre: "Success", message:  "Do you want to Delete Expense ? ", action: UIAlertAction(title: "Delete", style: .default, handler: { action in
+        
+                self.questionviewmodel.deletequestion(id: (self.filteredData[indexPath.row]._id)!)
+              
+                        self.tableView.reloadData()
+                
+               
+            })),animated: true)
+           
+                }
+        
+        
+    }
        
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             movie = filteredData[indexPath.row]

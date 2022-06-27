@@ -35,7 +35,7 @@ class newmailViewController: UIViewController {
         }else  if(to.text == ""){
             prompt(title: "warning", message: "To is empty")
         }else {
-            messagerieviewmodel.createtransaction(fromAdress: (userviewmodelm.userToken?.email)!, toAdress: to.text!, amount: Amount.text!)
+            messagerieviewmodel.createtransaction(fromAdress: (userviewmodelm.userToken?.email)!, toAdress: to.text!, amount: Amount.text! + " DT" )
             
             prompt(title: "Succes", message: "Transaction added successfully")
         }

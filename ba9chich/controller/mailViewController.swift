@@ -34,7 +34,7 @@ class mailViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            
-           tableView.backgroundColor = UIColor(hex: 0xE6FAF0)
+          
            let cell = tableView.dequeueReusableCell(withIdentifier: "mCell")
            let contentView = cell?.contentView
            
@@ -78,6 +78,22 @@ class mailViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
       //     performSegue(withIdentifier: "open", sender: movie)
            
        }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+                    //film.remove(at: indexPath.row)
+            self.present(Alert.makeActionAlert(titre: "Success", message:  "Do you want to Delete Transaction ? ", action: UIAlertAction(title: "Delete", style: .default, handler: { action in
+        
+                self.messagerieviewmodel.deletequestion(id: (self.filteredData[indexPath.row]._id)!)
+              
+                        self.tableView.reloadData()
+                
+               
+            })),animated: true)
+           
+                }
+        
+        
+    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
        
         filteredData = searchText.isEmpty ? data : data.filter({(dataString: Transaction) -> Bool in

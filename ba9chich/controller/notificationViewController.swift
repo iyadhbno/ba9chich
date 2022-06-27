@@ -14,6 +14,10 @@ class notificationViewController: UIViewController{
     var userviewmodelm = userVM()
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+    }
+    
+    @IBAction func msg(_ sender: Any) {
         let uid    = userviewmodelm.userToken?.phone
         let authKey = "4426c753e2c6e4bb5882dbe65f85d72ace266fe2"
 
@@ -29,6 +33,5 @@ class notificationViewController: UIViewController{
         }
     }
     
-
   
 }
