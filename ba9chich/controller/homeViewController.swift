@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import CometChatPro
 extension UIColor {
     convenience init(hex: UInt, alpha: CGFloat = 1) {
         self.init(
@@ -35,10 +36,26 @@ class homeViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
        }
        
        
+    @IBOutlet weak var profile: UIImageView!
+    
        
        
-       
-       
+    @IBAction func buttonmsg(_ sender: Any) {
+        let uid    = userviewmodelm.userToken?.phone
+        let authKey = "3b27be4d0bb69a3f2aa54ef2d9ce2f0781edc534"
+
+        CometChat.login(UID: uid!, apiKey: authKey, onSuccess: { (user) in
+          print("Login successful: " + user.stringValue())
+        }) { (error) in
+          print("Login failed with error: " + error.errorDescription);
+        }
+        DispatchQueue.main.async {
+        let cometChatUI = CometChatUI()
+        cometChatUI.setup(withStyle: .pageSheet)
+        self.present(cometChatUI, animated: true, completion: nil)
+        }
+    }
+    
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            
         
@@ -118,12 +135,16 @@ class homeViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         // Do any additional setup after loading the view.
      sleep(1)
         print("///////////////////////")
-          
-               var path = String("https://localhost:3000/"+(self.userviewmodelm.userToken?.imageUrl)!).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-
-                     path = path.replacingOccurrences(of: "%5C", with: "/", options: NSString.CompareOptions.literal, range: nil)
-                      let url = URL(string: path)!
-                      print(url)
+        var path = String("http://localhost:3000/"+(self.userviewmodelm.userToken?.imageUrl)!).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                path = path.replacingOccurrences(of: "%5C", with: "/", options: NSString.CompareOptions.literal, range: nil)
+                       let url = URL(string: path)!
+                       print(url)
+                
+                profile.layer.masksToBounds = false
+        profile.layer.borderColor = UIColor.black.cgColor
+        profile.layer.cornerRadius = profile.frame.height/2
+        profile.clipsToBounds = true
+        profile.af.setImage(withURL: url)
        
           
         questionviewmodel.getOwnerToy(successHandler: {anomalyList in

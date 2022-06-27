@@ -10,7 +10,7 @@ import CometChatPro
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-let appId = "2128450b1088bce7"
+let appId = "213092b32d994fa0"
 let region = "us"
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

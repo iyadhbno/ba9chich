@@ -19,7 +19,7 @@ class notificationViewController: UIViewController{
     
     @IBAction func msg(_ sender: Any) {
         let uid    = userviewmodelm.userToken?.phone
-        let authKey = "4426c753e2c6e4bb5882dbe65f85d72ace266fe2"
+        let authKey = "3b27be4d0bb69a3f2aa54ef2d9ce2f0781edc534"
 
         CometChat.login(UID: uid!, apiKey: authKey, onSuccess: { (user) in
           print("Login successful: " + user.stringValue())

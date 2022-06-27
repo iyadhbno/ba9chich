@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import CometChatPro
 class mailViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
 
    //var
@@ -17,7 +18,8 @@ class mailViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
     private let refreshControl = UIRefreshControl()
    
     
- 
+    @IBOutlet weak var profil: UIImageView!
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     var data = [Transaction]()
@@ -30,7 +32,23 @@ class mailViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
        
        
        
-       
+    @IBAction func buttonmsg(_ sender: Any) {
+        
+        let uid    = userviewmodelm.userToken?.phone
+        let authKey = "3b27be4d0bb69a3f2aa54ef2d9ce2f0781edc534"
+
+        CometChat.login(UID: uid!, apiKey: authKey, onSuccess: { (user) in
+          print("Login successful: " + user.stringValue())
+        }) { (error) in
+          print("Login failed with error: " + error.errorDescription);
+        }
+        DispatchQueue.main.async {
+        let cometChatUI = CometChatUI()
+        cometChatUI.setup(withStyle: .pageSheet)
+        self.present(cometChatUI, animated: true, completion: nil)
+        }
+    }
+    
        
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            
@@ -107,11 +125,18 @@ class mailViewController: UIViewController ,UITableViewDelegate,UITableViewDataS
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
+        print("///////////////////////")
         var path = String("http://localhost:3000/"+(self.userviewmodelm.userToken?.imageUrl)!).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-
-              path = path.replacingOccurrences(of: "%5C", with: "/", options: NSString.CompareOptions.literal, range: nil)
-               let url = URL(string: path)!
-               print(url)
+                path = path.replacingOccurrences(of: "%5C", with: "/", options: NSString.CompareOptions.literal, range: nil)
+                       let url = URL(string: path)!
+                       print(url)
+                
+        profil.layer.masksToBounds = false
+        profil.layer.borderColor = UIColor.black.cgColor
+        profil.layer.cornerRadius = profil.frame.height/2
+        profil.clipsToBounds = true
+        profil.af.setImage(withURL: url)
+       
      
         
         messagerieviewmodel.getOwnerToy(successHandler: {anomalyList in
